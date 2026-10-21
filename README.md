@@ -115,6 +115,7 @@ upi-impact/
 │
 ├── scripts/                                           <- Core analysis & data processing scripts
 │   ├── generate_visualizations.py                     <- Generates figures in figures/ (Fig 1, 2, 3)
+│   ├── generate_docx_report.py                        <- Automated 7-page academic DOCX report generator
 │   ├── master_statistical_pipeline.py                 <- Complete end-to-end hypothesis battery & ML models
 │   ├── validate_hypotheses.py                         <- Hypothesis validation reporting script
 │   ├── UPI_Impact_Comprehensive_Statistical_Analysis.ipynb <- Full interactive Jupyter Notebook
@@ -122,7 +123,8 @@ upi-impact/
 │   ├── generate_perfect_google_forms_data.py          <- Form simulation & consistency engine
 │   └── update_timestamps.py                           <- Temporal distribution formatter
 │
-└── DOCUMENTATION /
+└── DOCUMENTATION & REPORTS /
+    ├── Impact_of_UPI_on_Spending_Behaviour_Report.docx <- Formal 7-Page Academic Research Report
     ├── PROJECT_CONTEXT.md                             <- In-depth behavioral economics & survey instrument context
     ├── IEEE_DATAPORT_SPEC.md                          <- IEEE DataPort specification & codebook
     ├── DATA_IN_BRIEF.md                               <- Elsevier Data in Brief manuscript draft
