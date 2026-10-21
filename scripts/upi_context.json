@@ -1,0 +1,77 @@
+{
+  "project_title": "Impact of Unified Payments Interface (UPI) on Spending Behaviour Among College Students",
+  "domain": "Artificial Intelligence & Machine Learning (AIML), Applied Statistics & Behavioral Economics",
+  "target_demographic": "Undergraduate and postgraduate college students (Ages 17-26) in India",
+  "primary_objective": "Quantify, analyze, and model how high-frequency, frictionless digital payment adoption alters students' financial discipline, monthly expenditures, impulse purchases, and perceived psychological pain of paying.",
+  "hypotheses": [
+    {
+      "id": 1,
+      "research_question": "Has average monthly spending increased significantly after adopting UPI?",
+      "h0": "Mean spending after <= Mean spending before",
+      "h1": "Mean spending after > Mean spending before",
+      "statistical_test": "Paired Two-Sample T-Test / Wilcoxon Signed-Rank Test"
+    },
+    {
+      "id": 2,
+      "research_question": "Do frequent UPI users (Daily) report a higher proportion of overspending compared to infrequent users?",
+      "h0": "p_daily = p_infrequent",
+      "h1": "p_daily > p_infrequent",
+      "statistical_test": "Two-Sample Z-Test for Proportions"
+    },
+    {
+      "id": 3,
+      "research_question": "Is finding UPI 'less painful than cash' statistically dependent on reporting overspending?",
+      "h0": "Variable A and B are independent",
+      "h1": "Variable A and B are significantly dependent",
+      "statistical_test": "Pearson's Chi-Square Test of Independence"
+    },
+    {
+      "id": 4,
+      "research_question": "Does the perceived influence rating (1-10) differ across different monthly UPI spending brackets?",
+      "h0": "Mean influence is equal across all spending brackets",
+      "h1": "At least one spending bracket has a significantly different mean influence rating",
+      "statistical_test": "One-Way ANOVA / Kruskal-Wallis H-Test"
+    }
+  ],
+  "encodings": {
+    "likert_map": {
+      "Never": 1,
+      "Rarely": 2,
+      "Sometimes": 3,
+      "Often": 4,
+      "Very often": 5
+    },
+    "spend_bracket_midpoints": {
+      "Below ₹5,000": 3500.0,
+      "₹5,000–₹10,000": 7500.0,
+      "₹10,001–₹20,000": 15000.0,
+      "₹20,001–₹30,000": 25000.0,
+      "Above ₹30,000": 35000.0,
+      "Not applicable / Cannot remember": null
+    },
+    "cash_carried_midpoints": {
+      "Less than ₹500": 250.0,
+      "₹500–₹1,000": 750.0,
+      "₹1,001–₹2,000": 1500.0,
+      "₹2,001–₹5,000": 3500.0,
+      "More than ₹5,000": 6000.0
+    }
+  },
+  "questions": [
+    { "id": "q1_freq", "header": "UPI_Frequency", "type": "categorical_ordinal", "options": ["Daily", "Several times a week", "Once a week", "A few times a month", "Rarely"] },
+    { "id": "q2_monthly_spend", "header": "Monthly_UPI_Spending", "type": "spending_bracket", "options": ["Below ₹5,000", "₹5,000–₹10,000", "₹10,001–₹20,000", "₹20,001–₹30,000", "Above ₹30,000"] },
+    { "id": "q3_cash_carry", "header": "Cash_Carried", "type": "cash_bracket", "options": ["Less than ₹500", "₹500–₹1,000", "₹1,001–₹2,000", "₹2,001–₹5,000", "More than ₹5,000"] },
+    { "id": "q4_spend_more_upi", "header": "Spend_More_Than_Cash", "type": "categorical", "options": ["Yes", "No", "Maybe"] },
+    { "id": "q5_unplanned_purchases", "header": "Unplanned_Purchases_Frequency", "type": "likert", "options": ["Never", "Rarely", "Sometimes", "Often", "Very often"] },
+    { "id": "q6_cashback_discounts", "header": "Cashback_Discount_Influence", "type": "likert", "options": ["Never", "Rarely", "Sometimes", "Often", "Very often"] },
+    { "id": "q7_check_history", "header": "Checks_Transaction_History", "type": "categorical_ordinal", "options": ["Yes, regularly", "Sometimes", "Rarely", "Never"] },
+    { "id": "q8_regret_purchase", "header": "Regret_UPI_Purchase", "type": "likert", "options": ["Never", "Rarely", "Sometimes", "Often", "Very often"] },
+    { "id": "q9_less_painful", "header": "Payment_Less_Painful", "type": "categorical", "options": ["Yes", "No", "Not sure"] },
+    { "id": "q10_spending_increased", "header": "Spending_Increased_With_UPI", "type": "categorical", "options": ["Yes", "No", "Not sure"] },
+    { "id": "q11_small_value_convenience", "header": "Small_Value_Convenience_Purchases", "type": "likert", "options": ["Never", "Rarely", "Sometimes", "Often", "Very often"] },
+    { "id": "q12_spend_before_upi", "header": "Monthly_Spending_Before_UPI", "type": "spend_before", "options": ["Below ₹5,000", "₹5,000–₹10,000", "₹10,001–₹20,000", "₹20,001–₹30,000", "Above ₹30,000", "Not applicable / Cannot remember"] },
+    { "id": "q13_spend_after_upi", "header": "Monthly_Spending_After_UPI", "type": "spending_bracket", "options": ["Below ₹5,000", "₹5,000–₹10,000", "₹10,001–₹20,000", "₹20,001–₹30,000", "Above ₹30,000"] },
+    { "id": "q14_influence_scale", "header": "Influence_Rating_1_10", "type": "interval_1_10", "min": 1, "max": 10 },
+    { "id": "q15_causes_overspend", "header": "Causes_Overspending", "type": "categorical_target", "options": ["Yes", "No", "Maybe"] }
+  ]
+}

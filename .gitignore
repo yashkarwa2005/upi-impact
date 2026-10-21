@@ -1,0 +1,22 @@
+# Python environment & cache
+.venv/
+env/
+venv/
+__pycache__/
+*.py[cod]
+*$py.class
+*.ipynb_checkpoints
+
+# OS & Editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Exclude non-UPI project scratch & test files
+heart_disease*
+scripts/submit_heart_disease_responses.py
+check.xlsx
+scripts/*check*.py
+scripts/auto_submit_to_google_forms.py
+New folder/
